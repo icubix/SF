@@ -1,8 +1,8 @@
 var app = angular.module('sfApp.schoolfinder',['sfApp.SchoolService','sfApp.sfFactory']);
 
-app.controller('finder',function($scope,schoolService)
+app.controller('finder',function($scope,schoolFactory)
 {
-	schoolService.getschools(function(data){
+	schoolFactory.getschools(function(data){
 		$scope.users = data;
 	})
 
