@@ -7,17 +7,17 @@ app.factory('loginFactory',function($http){
 // 			callbackFn(data);
 // 		});
 // };
-
+ var serviceurl = 'http://localhost:3000/'
 return{
 	// getschools: getSchools
 	 SaveLogin: function (data) {
-	 	alert("adf11111")
+	
 	 	//alert(data);
             return $http({
-                url: 'HTTP://LOCALHOST:3000',
+                url: serviceurl +'authRoute/validateLogin',
                 method: "POST",
-                data: '=' + encodeURIComponent(JSON.stringify(data)),
-               
+              //  data: '=' + encodeURIComponent(JSON.stringify(data)),
+               data: data
             })
         },
 

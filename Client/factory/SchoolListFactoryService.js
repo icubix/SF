@@ -7,19 +7,41 @@ app.factory('schoollistFactory',function($http){
 		//	CALLBACKFN(DATA);
 		//});
 //};
-
+ var serviceurl = 'http://localhost:3000/'
 return{
 
-	 // SaveRegister: function (data) {
-	 // 	alert("adf")
-	 // 	//alert(data);
-  //           return $http({
-  //               url: 'HTTP://LOCALHOST:3000',
-  //               method: "POST",
-  //               data: '=' + encodeURIComponent(JSON.stringify(data)),
-               
-  //           })
-  //       },
+	SaveSchoolInfo: function (data) {
+	 	
+	 	//alert(data);
+            return $http({
+                url: serviceurl + 'schoolRoute/AddSchool',
+                method: "POST",
+              //  data: '=' + encodeURIComponent(JSON.stringify(data)),
+               data:data,
+            })
+        },
+
+        GetSchools : function(){
+        	alert("aa");
+        	var url = serviceurl +'schoolRoute/getSchools';
+
+            return $http.get(url);
+        },
+
+        GetSchl: function(data){
+        	
+        	// return $http({
+
+        	//   url : serviceurl +'schoolRoute/getSchool' 
+         //         method: "POST",
+         //       data:data,
+         //    //return $http.get(url);
+         //    })
+
+         var url = serviceurl +'schoolRoute/getSchools/' + data;
+
+            return $http.get(url);
+        },
 
 };
 

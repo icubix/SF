@@ -1,4 +1,4 @@
-var app = angular.module('sfApp',['ngRoute','sfApp.schoolfinder','sfApp.schoolRegister','sfApp.schoolLogin', 'sfApp.schoolListRegister','sfApp.schoolInfoRegister']);
+var app = angular.module('sfApp',['ngRoute','sfApp.schoolfinder','sfApp.schoolRegister','sfApp.schoolLogin', 'sfApp.schoolListRegister','sfApp.schoolInfoRegister','sfApp.addschoolctrl']);
 app.config(function($routeProvider) {
   $routeProvider
   .when('/', {
@@ -20,6 +20,10 @@ app.config(function($routeProvider) {
   .when('/SchoolInfo',{
     templateUrl:'views/SchoolInfo.html',
     controller:'SchoolInfo'
+  })
+   .when('/AddSchool',{
+    templateUrl:'views/AddSchool.html',
+    controller:'AddSchool'
   })
   .otherwise({redirectTo: '/'});
 });

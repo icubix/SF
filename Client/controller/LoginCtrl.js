@@ -1,14 +1,30 @@
 var app = angular.module('sfApp.schoolLogin',['sfApp.logFactory']);
 
-app.controller('Login',function($scope,loginFactory)
+app.controller('Login',function($scope, $rootScope,  $cookieStore,loginFactory)
 {
-	alert("helo1122");
+	
 
   $scope.GetLogIn = function () {
    	//alert($scope.form);
-   	alert($scope.form.Email);
+  // 	alert($scope.form.UserName);
      loginFactory.SaveLogin($scope.form).success(function (resultData) {
-            //$scope.success = resultData;          
+       var UserID ="";
+      angular.forEach(resultData, function(value, index) {
+      // console.log(key + ': ' + value);
+      UserID =value.UserID;
+        });
+
+     	
+            if(resultData.length > 0)  
+            {
+              $cookieStore.put("UserId", UserID);
+            	location.href = 'http://localhost:8888/SF/Client/#/SchoolList'
+            } 
+            else
+            {
+              alert("sdfsdf");
+               $scope.message = "Invalid User name/ Password";
+            }      
         }).error(function (errorData) { });
   
 

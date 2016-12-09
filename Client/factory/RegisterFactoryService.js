@@ -6,20 +6,26 @@ app.factory('registerFactory',function($http){
 		//	CALLBACKFN(DATA);
 		//});
 //};
-
+var serviceurl = 'http://localhost:3000/'
 return{
 
 	 SaveRegister: function (data) {
 	 	alert("adf")
 	 	//alert(data);
             return $http({
-                url: 'HTTP://LOCALHOST:3000',
+                url: serviceurl +'authRoute/register',
                 method: "POST",
-                data: '=' + encodeURIComponent(JSON.stringify(data)),
+               // data: '=' + encodeURIComponent(JSON.stringify(data)),
+               data: data,
                
             })
         },
 
+        GetRoleDetails : function(){
+        	var url = serviceurl +'authRoute/getRoles';
+
+            return $http.get(url);
+        },
 };
 
 
