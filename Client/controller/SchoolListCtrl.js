@@ -80,11 +80,11 @@ if (navigator.geolocation) {
    
 
   $scope.SaveSchoolInfo = function () {
-    //alert("1")
+   
     $scope.schoolForm.ClassGroups = 1;
      $scope.schoolForm.Description = "1sdm";
      schoollistFactory.SaveSchoolInfo($scope.schoolForm).success(function (resultData) {
-            //$scope.success = resultData;    
+            
             return resultData;      
         }).error(function (errorData) { 
           console.log(errorData);

@@ -10,7 +10,7 @@ var serviceurl = 'http://localhost:3000/'
 return{
 
 	 SaveRegister: function (data) {
-	 	alert("adf")
+	 	
 	 	//alert(data);
             return $http({
                 url: serviceurl +'authRoute/register',

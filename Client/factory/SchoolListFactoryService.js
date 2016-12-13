@@ -22,7 +22,7 @@ return{
         },
 
         GetSchools : function(){
-        	alert("aa");
+        
         	var url = serviceurl +'schoolRoute/getSchools';
 
             return $http.get(url);

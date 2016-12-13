@@ -4,7 +4,7 @@ var app = angular.module('sfApp.addschoolctrl',['sfApp.addSlFactory']);
 app.controller('AddSchool',function($scope, addSchoolFactory)
 {
 	alert("helo");
-
+//$scope.addSchoolForm.NoOfStudents;
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){

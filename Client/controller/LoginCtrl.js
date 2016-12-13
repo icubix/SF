@@ -22,7 +22,7 @@ app.controller('Login',function($scope, $rootScope,  $cookieStore,loginFactory)
             } 
             else
             {
-              alert("sdfsdf");
+             
                $scope.message = "Invalid User name/ Password";
             }      
         }).error(function (errorData) { });

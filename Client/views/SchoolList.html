@@ -232,7 +232,8 @@
                                         <div class="form-group col-md-4">
                                             <label class="control-label" id="lbl_BasicInfo_TypeofInstitute">Type of School</label>
                                             <div class="element_pos">
-                                        <select class="form-control" placeholder="">
+                                        <select class="form-control" ng-model="myForm.SchoolID" name="typeOfSchool" required="true" >
+                                         <option value="">Select School</option>
                                             <option value="0">Co-Education</option>
                                             <option value="1">Co-Education</option>
                                             <option value="2">Boys</option>
@@ -240,28 +241,30 @@
                                             <option value="4">Residential</option>
                                             <option value="5">Non Residential</option>
                                         </select>
+                                         <span style="color:red" ng-show="myForm.typeOfSchool.$dirty && myForm.typeOfSchool.$invalid">
+                                            <span ng-show="myForm.typeOfSchool.$error.required">Please select type of school</span>
                                         </div>
                                         </div>                     
                                         <div class="form-group col-md-4">
                                             <label class="control-label" >Type of Recognition</label>
                                             <div class="element_pos">
-                                            <select class="form-control" >
+                                            <select class="form-control" ng-model="DepartmentID" name="Sector" required="true" >
+                                            <option value="">Select Sector</option>
                                                 <option value="0">Govt</option>
                                                 <option value="1">Private</option>
-                                        
-                                       
-                                                <option value="3">Private</option>
                                             </select>
+                                            <span style="color:red" ng-show="myForm.Sector.$dirty && myForm.Sector.$invalid">
+                                            <span ng-show="myForm.Sector.$error.required">Please select type of recognition</span>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="control-label">Phone Number</label>
                                             <div class="input-group m-b-sm">
                                               <!--   <span class="input-group-addon">1</span> -->
-                                                 <input type="text" class="form-control" placeholder="1234567891" ng-model="schoolForm.PhoneNumber" name="PhoneNumber" required="true">
+                                                 <input type="text" class="form-control" placeholder="1234567891" ng-model="schoolForm.PhoneNumber" name="PhoneNumbers" required="true">
 
-                                                  <span style="color:red" ng-show="schoolForm.PhoneNumber.$dirty && schoolForm.PhoneNumber.$invalid">
-                                            <span ng-show="schoolForm.PhoneNumber.$error.required">Phonenumber is required.</span>
+                                                  <span style="color:red" ng-show="schoolForm.PhoneNumbers.$dirty && schoolForm.PhoneNumbers.$invalid">
+                                            <span ng-show="schoolForm.PhoneNumbers.$error.required">Phonenumber is required.</span>
                                             </div>
                                         </div>
                                         
@@ -275,33 +278,35 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label>Website</label>
-                                        <input type="text" class="form-control" ng-model="schoolForm.Website" name="Website" required="true">
-                                        <span style="color:red" ng-show="schoolForm.Website.$dirty && schoolForm.Website.$invalid">
-                                            <span ng-show="schoolForm.Website.$error.required">Website is required.</span>
+                                        <input type="text" class="form-control" ng-model="schoolForm.Website" name="Websites" required="true">
+                                        <span style="color:red" ng-show="schoolForm.Websites.$dirty && schoolForm.Websites.$invalid">
+                                            <span ng-show="schoolForm.Websites.$error.required">Website is required.</span>
                                     </div>
                                     
                                      <div class="form-group col-md-4">
                                         <label>No.of Students</label>
-                                        <input type="text" class="form-control" placeholder="400" ng-model="schoolForm.NoOfStudents" name="NoOfStudents" required="true">
-                                        <span style="color:red" ng-show="schoolForm.NoOfStudents.$dirty && schoolForm.NoOfStudents.$invalid">
-                                            <span ng-show="schoolForm.NoOfStudents.$error.required">NoOfStudents  required.</span>
+                                        <input type="number" class="form-control" placeholder="400" ng-model="schoolForm.NoOfStudents" name="NoOfStudent" required="true">
+                                        <span style="color:red" ng-show="schoolForm.NoOfStudent.$dirty && schoolForm.NoOfStudent.$invalid">
+                                            <span ng-show="schoolForm.NoOfStudent.$error.required">NoOfStudents  required.</span>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label>No.of Teachers</label>
-                                        <input type="text" class="form-control" placeholder="12" ng-model="schoolForm.NoOfTeachers" name="NoOfTeacher" required="true">
+                                        <input type="number" class="form-control" placeholder="12" ng-model="schoolForm.NoOfTeachers" name="NoOfTeacher" required="true">
                                           <span style="color:red" ng-show="schoolForm.NoOfTeacher.$dirty && schoolForm.NoOfTeacher.$invalid">
                                             <span ng-show="schoolForm.NoOfTeacher.$error.required">NoOfTeachers  required.</span>
                                     </div>
                                     
                                     <div class="form-group col-md-4">
                                         <label>Teacher Student Ratio</label>
-                                        <select class="form-control" ng-model="schoolForm.SchoolChildrenRatio" >
+                                        <select class="form-control" ng-model="schoolForm.SchoolChildrenRatio" name="Ratio" required="true" >
+                                            <option value="">Select Ratio</option>
                                             <option value="1:25">1:25</option>
                                             <option value="1:30">1:30</option>
                                             <option value="2:50">2:50</option>
                                             
                                         </select>
-                                        
+                                        <span style="color:red" ng-show="addSchoolForm.Ratio.$dirty && addSchoolForm.Ratio.$invalid">
+                                            <span ng-show="addSchoolForm.Ratio.$error.required">Please select ratio</span>
                                     </div>
                                     
                                     <div class="form-group col-md-4">
@@ -336,9 +341,9 @@
                                         </div>
                                        <div class="col-md-3">
                                             <label>Street 2</label>
-                                            <input type="text" class="form-control" placeholder="16th Street Southeast[1]" ng-model="schoolForm.Street2" name="Street2" required="true">
-                                            <span style="color:red" ng-show="schoolForm.Street2.$dirty && schoolForm.Street2.$invalid">
-                                            <span ng-show="schoolForm.Street2.$error.required">Street2 is required.</span>
+                                            <input type="text" class="form-control" placeholder="16th Street Southeast[1]" ng-model="schoolForm.Street2" name="Streets2" required="true">
+                                            <span style="color:red" ng-show="schoolForm.Streets2.$dirty && schoolForm.Streets2.$invalid">
+                                            <span ng-show="schoolForm.Streets2.$error.required">Street2 is required.</span>
                                         </div>
                                         <div form-group class="col-md-3">
                                             <label>City</label>
@@ -349,7 +354,8 @@
                                         <div class="col-md-3">
                                             <label class="control-label" id="lbl_BasicInfo_District">State</label>
                                             <div class="element_pos">
-                                                <select class="form-control" ng-model="schoolForm.State" >
+                                                <select class="form-control" ng-model="schoolForm.State" name="states" required="true">
+                                                 <option value="">Select State</option>
                                                 <option value="0">Alabama</option>
                                                 <option value="1">Alaska</option>
                                                 <option value="1">Arizona</option>
@@ -358,6 +364,8 @@
                                                 <option value="1">Colorado</option>
                                                 
                                                 </select>
+                                                <span style="color:red" ng-show="addSchoolForm.states.$dirty && addSchoolForm.states.$invalid">
+                                            <span ng-show="addSchoolForm.states.$error.required">Please select state</span>
                                             </div>
                                         </div>
                                     
@@ -389,21 +397,22 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label>Credit Card Number</label>
-                                            <input type="text" class="form-control" placeholder="123456789" ng-model="schoolForm.CardNumber" name="creditCardNumber" required="true">
+                                            <input type="number" class="form-control" placeholder="123456789" ng-model="schoolForm.CardNumber" name="creditCardNumber" required="true">
                                              <span style="color:red" ng-show="schoolForm.creditCardNumber.$dirty && schoolForm.creditCardNumber.$invalid">
                                             <span ng-show="schoolForm.creditCardNumber.$error.required">Creditcardnumber is required.</span>
                                         </div>
                                         <div class="col-md-2">
                                             <label>CVV</label>
-                                            <input type="text" class="form-control" placeholder="123" ng-model="schoolForm.CVV" name="CVV" required="true">
-                                            <span style="color:red" ng-show="schoolForm.CVV.$dirty && schoolForm.CVV.$invalid">
-                                            <span ng-show="schoolForm.CVV.$error.required">CVV is required.</span>
+                                            <input type="number" class="form-control" placeholder="123" ng-model="schoolForm.CVV" name="CVVs" required="true">
+                                            <span style="color:red" ng-show="schoolForm.CVVs.$dirty && schoolForm.CVVs.$invalid">
+                                            <span ng-show="schoolForm.CVVs.$error.required">CVV is required.</span>
                                         </div>
                                         
                                         <div class="col-md-3" >
                                             <label>Expiration: <label>
                                             
-                                                  <select class="form-control" ng-model="schoolForm.Month">
+                                                  <select class="form-control" ng-model="schoolForm.Month" name="Months" required="true">
+                                                <option value="">Select Month</option>
                                                 <option value="January">January</option>
                                                 <option value="Febrauary">Febrauary</option>
                                                 <option value="March">March</option>
@@ -418,10 +427,13 @@
                                                 <option value="December">December</option>
                                           
                                             </select>
+                                               <span style="color:red" ng-show="addSchoolForm.Months.$dirty && addSchoolForm.Months.$invalid">
+                                            <span ng-show="addSchoolForm.Months.$error.required">Please select month</span>
                                         </div>
                                         <div class="col-md-3" >
                                             <label>&nbsp; <label>
-                                            <select class="form-control" ng-model="schoolForm.Year">
+                                            <select class="form-control" ng-model="schoolForm.Year"  name="Years" required="true">
+                                              <option value="">Select Year</option>
                                                 <option value="2016">2016</option>
                                                 <option value="2017">2017</option>
                                                 <option value="2018">2018</option>
@@ -435,6 +447,8 @@
                                                 <option value="2026">2026</option>
                                                 <option value="2027">2027</option>
                                             </select>
+                                            <span style="color:red" ng-show="addSchoolForm.Years.$dirty && addSchoolForm.Years.$invalid">
+                                            <span ng-show="addSchoolForm.Years.$error.required">Please select year</span>
                                         </div>
                                     </div>
                                 </div>
@@ -442,7 +456,7 @@
                                 
                                 
                                 <div class="row text-center margin-bot">
-                                    <button  class="btn btn-success m-t-xs" data-ng-click="SaveSchoolInfo()">Save</button>
+                                    <button  class="btn btn-success m-t-xs"  ng-disabled="schoolForm.$invalid" data-ng-click="SaveSchoolInfo()">Save</button>
                                     <a class="view bg-red" data-ng-click="cancelSchool()">Cancel</a>
                                 </div>
                                 

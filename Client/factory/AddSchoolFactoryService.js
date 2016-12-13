@@ -11,7 +11,7 @@ app.factory('addSchoolFactory',function($http){
 return{
 
 	SaveAddSchool: function (data) {
-	 	alert("adf")
+	 
 	 	//alert(data);
             return $http({
                 url: serviceurl + 'schoolRoute/AddSchool',
