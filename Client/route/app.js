@@ -25,6 +25,10 @@ app.config(function($routeProvider) {
     templateUrl:'views/AddSchool.html',
     controller:'AddSchool'
   })
+   .when('/SchoolSearch',{
+    templateUrl:'views/SchoolSearch.html',
+    controller:'SchoolSearch'
+   })
   .otherwise({redirectTo: '/'});
 });
 

@@ -3,7 +3,7 @@ var app = angular.module('sfApp.addschoolctrl',['sfApp.addSlFactory']);
 
 app.controller('AddSchool',function($scope, addSchoolFactory)
 {
-	alert("helo");
+	//alert("helo");
 //$scope.addSchoolForm.NoOfStudents;
 
 if (navigator.geolocation) {
