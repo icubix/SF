@@ -1,10 +1,6 @@
 var app = angular.module('sfApp',['ngRoute','sfApp.schoolfinder','sfApp.schoolRegister','sfApp.schoolLogin', 'sfApp.schoolListRegister','sfApp.schoolInfoRegister','sfApp.addschoolctrl']);
 app.config(function($routeProvider) {
   $routeProvider
-  .when('/', {
-    templateUrl : 'views/school.html',
-    controller: 'finder'
-  })
   .when('/Register',{
   	templateUrl:'views/register.html',
   	controller:'register'
@@ -25,7 +21,7 @@ app.config(function($routeProvider) {
     templateUrl:'views/AddSchool.html',
     controller:'AddSchool'
   })
-   .when('/SchoolSearch',{
+   .when('/',{
     templateUrl:'views/SchoolSearch.html',
     controller:'SchoolSearch'
    })

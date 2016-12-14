@@ -48,13 +48,13 @@
                                 <form class="m-t-md" name="form" novalidate>
                                     <span style="color:red">{{message}}</span>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="User Name"  data-ng-model="form.UserName" name="UserName" required="true">
+                                        <input type="text" class="form-control" placeholder="User Name"  data-ng-model="form.UserName" required="true">
 
                                          <span style="color:red" ng-show="form.UserName.$dirty && form.UserName.$invalid">
                                             <span ng-show="form.UserName.$error.required">Username is required.</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" data-ng-model="form.Password" required="true" name="Password">
+                                        <input type="password" class="form-control" placeholder="Password" data-ng-model="form.Password" required="true">
                                            <span style="color:red" ng-show="form.Password.$dirty && form.Password.$invalid">
                                             <span ng-show="form.Password.$error.required">Password is required.</span>
 
