@@ -3,6 +3,10 @@ var app = angular.module('sfApp.schoolLogin',['sfApp.logFactory']);
 app.controller('Login',function($scope, $rootScope,  $cookieStore,loginFactory)
 {
 	
+  $scope.Register = function(){
+    
+    location.href= 'http://localhost:8888/SF/Client/#/Register'
+  };
 
   $scope.GetLogIn = function () {
    	//alert($scope.form);

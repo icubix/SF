@@ -1,20 +1,20 @@
-var app = angular.module('sfApp.slFactory',[]);
+var app = angular.module('sfApp.slFactory',['sfApp.myApp']);
 
-app.factory('schoollistFactory',function($http){
+app.factory('schoollistFactory',function($http,urls){
 // GETSCHOOLS = FUNCTION(CALLBACKFN){
 	//	$HTTP.GET('HTTP://LOCALHOST:3000').SUCCESS(FUNCTION(DATA)
 	//	{
 		//	CALLBACKFN(DATA);
 		//});
 //};
- var serviceurl = 'http://localhost:3000/'
+ //var serviceurl = 'http://localhost:3000/'
 return{
 
 	SaveSchoolInfo: function (data) {
 	 	
 	 	//alert(data);
             return $http({
-                url: serviceurl + 'schoolRoute/AddSchool',
+                url: urls.apiUrl + 'schoolRoute/AddSchool',
                 method: "POST",
               //  data: '=' + encodeURIComponent(JSON.stringify(data)),
                data:data,
@@ -23,7 +23,7 @@ return{
 
         GetSchools : function(){
         
-        	var url = serviceurl +'schoolRoute/getSchools';
+        	var url = urls.apiUrl +'schoolRoute/getSchools';
 
             return $http.get(url);
         },
@@ -38,7 +38,7 @@ return{
          //    //return $http.get(url);
          //    })
 
-         var url = serviceurl +'schoolRoute/getSchools/' + data;
+         var url = urls.apiUrl +'schoolRoute/getSchools/' + data;
 
             return $http.get(url);
         },

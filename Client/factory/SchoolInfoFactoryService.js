@@ -1,5 +1,5 @@
-var app = angular.module('sfApp.sInfoFactory',[]);
-app.factory('schoolInfoFactory',function($http){
+var app = angular.module('sfApp.sInfoFactory',['sfApp.myApp']);
+app.factory('schoolInfoFactory',function($http,urls){
 // GETSCHOOLS = FUNCTION(CALLBACKFN){
 	//	$HTTP.GET('HTTP://LOCALHOST:3000').SUCCESS(FUNCTION(DATA)
 	//	{
