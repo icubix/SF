@@ -1,7 +1,7 @@
 
 var app = angular.module('sfApp.addschoolctrl',['sfApp.addSlFactory']);
 
-app.controller('AddSchool',function($scope, addSchoolFactory)
+app.controller('AddSchool',function($scope, addSchoolFactory,$cookieStore)
 {
 	//alert("helo");
 //$scope.addSchoolForm.NoOfStudents;
@@ -10,8 +10,8 @@ if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.$apply(function(){
        
-        $scope.addSchoolForm.Longitude = position.coords.latitude; 
-        $scope.addSchoolForm.Latitude = position.coords.longitude;
+        $scope.addSchoolForm.Longitude = position.coords.longitude; 
+        $scope.addSchoolForm.Latitude = position.coords.latitude;
       });
     });
   }
