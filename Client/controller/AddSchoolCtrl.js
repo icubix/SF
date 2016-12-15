@@ -59,7 +59,12 @@ var dataschool = {
 
 
 
+(function () {
+  
 
+   $scope.userId = $cookieStore.get('UserId');
+   
+         })();
 
 
 
