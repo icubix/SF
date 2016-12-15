@@ -62,7 +62,7 @@ var dataschool = {
 (function () {
   
 
-   $scope.userId = $cookieStore.get('UserId');
+   $scope.userID = $cookieStore.get('UserID');
    
          })();
 

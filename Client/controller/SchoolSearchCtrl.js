@@ -16,7 +16,7 @@ app.controller('SchoolSearch',function($scope,schoolSearchFactory)
      (function () {
   
 
-   $scope.userId = $cookieStore.get('UserId');
+   $scope.userID = $cookieStore.get('UserID');
    //alert(userId);
   	     })();
 

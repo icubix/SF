@@ -22,14 +22,17 @@
      
         <div class="head-rt move-right">
         	<ul>
-            	<li>Admin is Logged in </li>
+            	<!-- <li>Admin is Logged in </li>
                 
-                <li><A href="admin-school-list.html">School List</A></li>
-                <li><A href="index.html">Logout</A></li>
+                <li><A href="admin-school-list.html">School List</A></li> -->
+                
+                <li ng-hide="{{RoleID != 3}}"><A href="#AddSchool">Add School</A></li>
+                <li ng-hide="{{UserID != 0}}"><A href="#Login">Login</A></li>
+                <li>Logged in As: {{UserName}} <a href="#Logout"> Logout</a></li>
                 
             </ul>
         </div>
-       {{userId}}
+       
     </div>
   </div>
 	<div ng-view></div>
@@ -48,6 +51,8 @@
 	<script src="../Client/controller/SchoolInfoCtrl.js"></script>
 	<script src="../Client/factory/AddSchoolFactoryService.js"></script>
 	<script src="../Client/controller/AddSchoolCtrl.js"></script>
+	<script src="../Client/controller/Logout.js"></script>
+
 	
 </body>
 </html>

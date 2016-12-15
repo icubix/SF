@@ -1,36 +1,29 @@
 var app = angular.module('sfApp.schoolLogin',['sfApp.logFactory']);
 
-app.controller('Login',function($scope, $rootScope,  $cookieStore,loginFactory)
+app.controller('Login',function($scope, $rootScope, $location,$cookieStore,loginFactory)
 {
-	
   $scope.Register = function(){
-    
-    location.href= 'http://localhost:8888/SF/Client/#/Register'
+    $location.path('/Register');
   };
 
-  $scope.GetLogIn = function () {
-   	//alert($scope.form);
-  // 	alert($scope.form.UserName);
-     loginFactory.SaveLogin($scope.form).success(function (resultData) {
-       var UserID ="";
-      angular.forEach(resultData, function(value, index) {
-      // console.log(key + ': ' + value);
-      UserID =value.UserID;
-        });
-
-     	
+  $scope.LogIn = function(){
+      console.log("kali");
+      var UserID;
+      loginFactory.SaveLogin($scope.form).success(function (resultData) {
             if(resultData.length > 0)  
             {
-              $cookieStore.put("UserId", UserID);
-            	location.href = 'http://localhost:8888/SF/Client/#/SchoolList'
+              $cookieStore.put("UserID", resultData[0].UserID);
+              $cookieStore.put("UserName",resultData[0].UserName);
+              $rootScope.UserID = $cookieStore.get("UserID");
+              $rootScope.UserName = $cookieStore.get("UserName");
+              $rootScope.RoleID = 3;
+              $rootScope.RoleName = "User";
+            	$location.path('/SchoolList');
             } 
             else
             {
-             
                $scope.message = "Invalid User name/ Password";
             }      
         }).error(function (errorData) { });
-  
-
     };
 });
