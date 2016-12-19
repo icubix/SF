@@ -1,6 +1,6 @@
 var app = angular.module('sfApp.schoolRegister',['sfApp.regFactory']);
 
-app.controller('register',function($scope,registerFactory,$location)
+app.controller('register',function($scope,$rootScope, $location,$cookieStore,registerFactory)
 {
    $scope.GetSignIn = function () {
    
@@ -25,8 +25,9 @@ app.controller('register',function($scope,registerFactory,$location)
     };
 
     (function () {
-                $scope.GetRoles();
-
+         $rootScope.disPage = false;
+         $scope.GetRoles();
+        
          })();
 
 });

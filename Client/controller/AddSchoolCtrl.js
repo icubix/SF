@@ -1,7 +1,7 @@
 
 var app = angular.module('sfApp.addschoolctrl',['sfApp.addSlFactory']);
 
-app.controller('AddSchool',function($scope, addSchoolFactory,$cookieStore)
+app.controller('AddSchool',function($scope, $rootScope, $location,$cookieStore,addSchoolFactory)
 {
 	//alert("helo");
 //$scope.addSchoolForm.NoOfStudents;
@@ -63,7 +63,7 @@ var dataschool = {
   
 
    $scope.userID = $cookieStore.get('UserID');
-   
+    $rootScope.disPage = false;
          })();
 
 

@@ -111,7 +111,7 @@ $scope.cancelSchool =function() {
    (function () {
    $scope.listDisplay=true;
    $scope.schoolListView();
-
+    $rootScope.disPage = false;
    $rootScope.UserID = $cookieStore.get('UserID');
    //$rootScope.UserName = $cookieStore.get("UserName");
    // alert($scope.UserID);

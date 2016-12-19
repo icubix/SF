@@ -1,13 +1,14 @@
 var app = angular.module('sfApp.schoolLogin',['sfApp.logFactory']);
-
+console.log('afasdf');
 app.controller('Login',function($scope, $rootScope, $location,$cookieStore,loginFactory)
 {
   $scope.Register = function(){
+     $rootScope.disPage = false;
     $location.path('/Register');
   };
 
   $scope.LogIn = function(){
-      console.log("kali");
+     // console.log("kali");
       var UserID;
       loginFactory.SaveLogin($scope.form).success(function (resultData) {
             if(resultData.length > 0)  
@@ -26,4 +27,8 @@ app.controller('Login',function($scope, $rootScope, $location,$cookieStore,login
             }      
         }).error(function (errorData) { });
     };
+
+    // $scope.LogOut = function() {
+    //  alert("aa")
+    // };
 });
