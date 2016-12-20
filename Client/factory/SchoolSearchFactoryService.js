@@ -9,16 +9,15 @@ app.factory('schoolSearchFactory',function($http,urls){
 
 return{
 
-	 // SaveRegister: function (data) {
-	 // 	alert("adf")
-	 // 	//alert(data);
-  //           return $http({
-  //               url: 'HTTP://LOCALHOST:3000',
-  //               method: "POST",
-  //               data: '=' + encodeURIComponent(JSON.stringify(data)),
-               
-  //           })
-  //       },
+	 Searchresult: function (data) {
+	 	//alert(data);
+            return $http({
+                url:  urls.apiUrl +'schoolRoute/searchSchools',
+                method: "POST",
+                //data: '=' + encodeURIComponent(JSON.stringify(data)),
+                 data:data,
+            })
+        },
 
 };
 
